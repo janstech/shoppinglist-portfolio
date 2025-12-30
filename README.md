@@ -1,78 +1,67 @@
 ﻿# Kauppalista & Muistiinpanot  
-**Shopping List & Notes — Android Production Showcase**
+### Android Production Architecture Showcase
 
-A privacy-first productivity application built for modern Android devices.  
-This repository presents a **sanitized architectural showcase** of a real-world production app currently undergoing final Google Play verification.
+This repository documents the architecture and design decisions behind  
+**Kauppalista & Muistiinpanot**, a privacy-first Android application currently undergoing Google Play production verification.
 
----
-
-## Overview
-
-**Kauppalista & Muistiinpanot** is a fully offline Android application designed with a strong focus on user privacy, data integrity, and long-term maintainability.
-
-- 📱 **Offline-first by design**
-- 🔒 **No accounts, no tracking, no external servers**
-- 🌍 **Localized for 10+ languages**
-- 🚀 **Built with modern Android best practices**
+This is a **portfolio showcase**, not a source-code release.
 
 ---
 
-## Privacy-First Philosophy
+## 🎯 Project Goals
 
-User data ownership is the core principle of this project.
-
-- **100% Offline Storage** – All data remains on the user’s device  
-- **No Tracking or Analytics** – No data collection of any kind  
-- **Full User Control** – Manual export and import via encrypted backup files  
-
----
-
-## Technical Highlights
-
-### Robust Data Management (Room)
-
-- **Schema migrations** demonstrating safe evolution (v16 → v17)  
-- **Data integrity** using foreign keys, indices, and transactional operations  
-- **Reactive DAOs** powered by Kotlin Flow for real-time UI updates  
-
-### Modern UI & State Management
-
-- **Jetpack Compose + Material 3**
-- **Dynamic theming** (Light / Dark / System)
-- **Jetpack DataStore** for thread-safe, reactive preferences
-
-### Production-Ready Features
-
-- 🎙 **Google Voice-to-Text** input
-- 🌐 **Multi-language support** (Finnish, English, Swedish, German, and more)
-- 📊 **Android Vitals monitoring** (currently reporting zero critical issues)
+- Offline-first productivity application
+- Zero tracking, zero accounts, zero external servers
+- Long-term data integrity and safe schema evolution
+- Modern Android architecture and UI practices
 
 ---
 
-## Developer Focus
+## 🧱 Architecture Overview
 
-This project demonstrates:
+The application follows a layered architecture:
 
-- Designing a scalable Room database for long-term feature growth  
-- Managing schema migrations safely in production  
-- Applying modern Android architecture patterns  
-- Building privacy-respecting applications without compromising UX  
+- **UI Layer** – Jetpack Compose + Material 3
+- **State Layer** – ViewModels + Kotlin Flows
+- **Data Layer** – Room database + DataStore
+- **System Integration** – Speech-to-text, backup/export, accessibility
 
----
-
-## Project Status
-
-- ✅ **12/12 closed-test milestone completed**
-- ⏳ **14-day Google Play production verification in progress**
-- 📈 **Stability monitored via Android Vitals**
+Detailed documentation:
+- [Architecture Overview](architecture/overview.md)
+- [Data Layer Design](architecture/data-layer.md)
+- [UI & State Management](architecture/ui-layer.md)
+- [Privacy & Security](architecture/privacy.md)
 
 ---
 
-## Repository Notice
+## 🔐 Privacy-First Design
 
-This repository contains a **sanitized subset** of the application intended to showcase architectural decisions and technical competence.  
-The full production source code and business logic remain private.
+- 100% offline operation
+- No analytics, no ads, no tracking
+- No user accounts or identifiers
+- User-controlled local backup and restore
 
 ---
 
-**Developed by Jan Sarivuo**  
+## 📦 Production Status
+
+- ✅ Closed Alpha (12/12 testers)
+- 🔄 Google Play 14-day production verification
+- 📊 Android Vitals: zero issues reported
+
+---
+
+## ℹ️ Source Code Notice
+
+This repository intentionally **does not contain application source code**.
+
+The full implementation remains private to protect:
+- Intellectual property
+- Business logic
+- Security-sensitive mechanisms
+
+Architecture descriptions are provided for **technical evaluation purposes**.
+
+---
+
+© Janstech
