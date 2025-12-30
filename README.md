@@ -31,6 +31,8 @@ Detailed documentation:
 - [Data Layer Design](architecture/data-layer.md)
 - [UI & State Management](architecture/ui-layer.md)
 - [Privacy & Security](architecture/privacy.md)
+- [Pseudocode Samples (No Source Code)](architecture/pseudocode.md)
+
 
 ---
 
