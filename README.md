@@ -1,49 +1,78 @@
-﻿Kauppalista & Muistiinpanot (Shopping List & Notes) — Android Production Showcase
+﻿# Kauppalista & Muistiinpanot  
+**Shopping List & Notes — Android Production Showcase**
 
-This repository showcases the core architecture and data layer of Kauppalista & Muistiinpanot (Shopping List & Notes), a privacy-focused productivity application built for modern Android devices. The application is currently in its final 14-day production verification phase on the Google Play Store after successfully passing the 12-tester alpha milestone.
-Privacy-First Philosophy
+A privacy-first productivity application built for modern Android devices.  
+This repository presents a **sanitized architectural showcase** of a real-world production app currently undergoing final Google Play verification.
 
-The core principle of this project is user privacy.
+---
 
-    100% Offline-First: All data is stored locally on the user's device.
+## Overview
 
-    No Tracking: No login is required, and no data is sent to external servers.
+**Kauppalista & Muistiinpanot** is a fully offline Android application designed with a strong focus on user privacy, data integrity, and long-term maintainability.
 
-    User Control: Users can manually export and import their data through secure backup files.
+- 📱 **Offline-first by design**
+- 🔒 **No accounts, no tracking, no external servers**
+- 🌍 **Localized for 10+ languages**
+- 🚀 **Built with modern Android best practices**
 
-Technical Highlights
-Robust Data Management (Room Persistence)
+---
 
-The application utilizes a complex Room database implementation that ensures data integrity and smooth evolution.
+## Privacy-First Philosophy
 
-    Schema Migrations: Demonstrates safe migration paths (v16 to v17) to add new features like birthday tracking without data loss.
+User data ownership is the core principle of this project.
 
-    Data Integrity: Uses Foreign Keys, indices, and SQLite transactions (withTransaction) for reliable backup and restore operations.
+- **100% Offline Storage** – All data remains on the user’s device  
+- **No Tracking or Analytics** – No data collection of any kind  
+- **Full User Control** – Manual export and import via encrypted backup files  
 
-    Reactive DAOs: Leveraging Kotlin Flows to provide real-time updates to the UI whenever the database changes.
+---
 
-Modern UI & Theme Management
+## Technical Highlights
 
-Built with Jetpack Compose and Material 3, the app offers a fluid and accessible user experience.
+### Robust Data Management (Room)
 
-    Dynamic Theme Engine: Implementation of Light, Dark, and System-default themes.
+- **Schema migrations** demonstrating safe evolution (v16 → v17)  
+- **Data integrity** using foreign keys, indices, and transactional operations  
+- **Reactive DAOs** powered by Kotlin Flow for real-time UI updates  
 
-    Reactive Preferences: Uses Jetpack DataStore (instead of SharedPreferences) for modern, thread-safe setting management.
+### Modern UI & State Management
 
-    Material 3 Design: Follows modern Android design guidelines for better accessibility and aesthetics.
+- **Jetpack Compose + Material 3**
+- **Dynamic theming** (Light / Dark / System)
+- **Jetpack DataStore** for thread-safe, reactive preferences
 
-Production Features
+### Production-Ready Features
 
-    Google Voice-to-Text: Allowing users to add products simply by speaking.
+- 🎙 **Google Voice-to-Text** input
+- 🌐 **Multi-language support** (Finnish, English, Swedish, German, and more)
+- 📊 **Android Vitals monitoring** (currently reporting zero critical issues)
 
-    Localization: Full support for 10+ languages, including Finnish, English, Swedish, and German.
+---
 
-Project Status
+## Developer Focus
 
-    12/12 Testers: Milestone reached.
+This project demonstrates:
 
-    14-Day Verification: Currently in progress to ensure stability.
+- Designing a scalable Room database for long-term feature growth  
+- Managing schema migrations safely in production  
+- Applying modern Android architecture patterns  
+- Building privacy-respecting applications without compromising UX  
 
-    Stability Monitoring: Integrated with Android Vitals, currently reporting zero issues.
+---
 
-Note: This repository contains a sanitized version of the application's architecture to showcase technical skills. The full business logic and UI remains private.
+## Project Status
+
+- ✅ **12/12 closed-test milestone completed**
+- ⏳ **14-day Google Play production verification in progress**
+- 📈 **Stability monitored via Android Vitals**
+
+---
+
+## Repository Notice
+
+This repository contains a **sanitized subset** of the application intended to showcase architectural decisions and technical competence.  
+The full production source code and business logic remain private.
+
+---
+
+**Developed by Jan Sarivuo**  
