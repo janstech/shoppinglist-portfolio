@@ -27,11 +27,11 @@ The application follows a layered architecture:
 - **System Integration** – Speech-to-text, backup/export, accessibility
 
 Detailed documentation:
-- [Architecture Overview](architecture/overview.md)
-- [Data Layer Design](architecture/data-layer.md)
-- [UI & State Management](architecture/ui-layer.md)
-- [Privacy & Security](architecture/privacy.md)
-- [Pseudocode Samples (No Source Code)](architecture/pseudocode.md)
+- [Architecture Overview](architecture-overview.md)
+- [Data Layer Design](architecture-data-layer.md)
+- [UI & State Management](architecture-ui-layer.md)
+- [Privacy & Security](architecture-privacy.md)
+- [Pseudocode Samples (No Source Code)](architecture-pseudocode.md)
 
 
 ---
