@@ -1,69 +1,65 @@
-﻿# Kauppalista & Muistiinpanot  
-### Android Production Architecture Showcase
+﻿Shopping List & Notes (Kauppalista & Muistiinpanot)
+Android Production Architecture Showcase
 
-This repository documents the architecture and design decisions behind  
-**Kauppalista & Muistiinpanot**, a privacy-first Android application currently undergoing Google Play production verification.
+This repository documents the architecture and design decisions behind Shopping List & Notes, a privacy-first Android application successfully released to the Google Play Store.
 
-This is a **portfolio showcase**, not a source-code release.
+This is a portfolio showcase, not a source-code release.
+🎯 Project Goals
 
----
+    Offline-first productivity application
 
-## 🎯 Project Goals
+    Zero tracking, zero accounts, zero external servers
 
-- Offline-first productivity application
-- Zero tracking, zero accounts, zero external servers
-- Long-term data integrity and safe schema evolution
-- Modern Android architecture and UI practices
+    Long-term data integrity and safe Room database migrations (v17+)
 
----
+    Modern Android architecture using Jetpack Compose and Material 3
 
-## 🧱 Architecture Overview
+    Coming Soon: Privacy-focused AI assistant for smart meal planning and shopping suggestions.
 
-The application follows a layered architecture:
+🧱 Architecture Overview
 
-- **UI Layer** – Jetpack Compose + Material 3
-- **State Layer** – ViewModels + Kotlin Flows
-- **Data Layer** – Room database + DataStore
-- **System Integration** – Speech-to-text, backup/export, accessibility
+The application follows a robust layered architecture:
+
+    UI Layer – Jetpack Compose with reactive Material 3 components
+
+    State Layer – ViewModels + Kotlin Flows for predictable state management
+
+    Data Layer – Room database with complex DAO relations and DataStore for settings
+
+    System Integration – Biometric authentication, automated backups, and multi-language support (12 languages)
 
 Detailed documentation:
-- [Architecture Overview](architecture-overview.md)
-- [Data Layer Design](architecture-data-layer.md)
-- [UI & State Management](architecture-ui-layer.md)
-- [Privacy & Security](architecture-privacy.md)
-- [Pseudocode Samples (No Source Code)](architecture-pseudocode.md)
 
+    Architecture Overview
 
----
+    Data Layer Design
 
-## 🔐 Privacy-First Design
+    Privacy & Security
 
-- 100% offline operation
-- No analytics, no ads, no tracking
-- No user accounts or identifiers
-- User-controlled local backup and restore
+    Pseudocode Samples (No Source Code)
 
----
+🔐 Privacy-First Design
 
-## 📦 Production Status
+    100% offline operation for core features
 
-- ✅ Closed Alpha (12/12 testers)
-- 🔄 Google Play 14-day production verification
-- 📊 Android Vitals: zero issues reported
+    No analytics or ads, respecting user's digital sovereignty
 
----
+    Biometric Locking for sensitive notes and settings
 
-## ℹ️ Source Code Notice
+    User-controlled data with local backup and restore mechanisms
 
-This repository intentionally **does not contain application source code**.
+📦 Production Status
 
-The full implementation remains private to protect:
-- Intellectual property
-- Business logic
-- Security-sensitive mechanisms
+    ✅ Production Approved: Officially granted access to Google Play production channel
 
-Architecture descriptions are provided for **technical evaluation purposes**.
+    ✅ Test Success: 14-day production verification completed with 24 active testers
 
----
+    ✅ Stability: 0.00% Crash/ANR rate reported via Android Vitals
 
-© Janstech
+    ✅ Version: Currently deploying version 2.0.5
+
+ℹ️ Source Code Notice
+
+This repository intentionally does not contain application source code. The full implementation remains private to protect intellectual property and business logic. Architecture descriptions and pseudocode are provided for technical evaluation purposes.
+
+© 2026 Janstech
