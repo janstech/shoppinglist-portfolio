@@ -1,65 +1,54 @@
-﻿Shopping List & Notes (Kauppalista & Muistiinpanot)
+Shopping List & Notes (Kauppalista & Muistiinpanot)
 Android Production Architecture Showcase
 
-This repository documents the architecture and design decisions behind Shopping List & Notes, a privacy-first Android application successfully released to the Google Play Store.
+This repository documents the architecture and design decisions behind Shopping List & Notes, a privacy-first Android application released to the Google Play Store.
 
 This is a portfolio showcase, not a source-code release.
+
 🎯 Project Goals
 
-    Offline-first productivity application
-
-    Zero tracking, zero accounts, zero external servers
-
-    Long-term data integrity and safe Room database migrations (v17+)
-
-    Modern Android architecture using Jetpack Compose and Material 3
-
-    Coming Soon: Privacy-focused AI assistant for smart meal planning and shopping suggestions.
+- Offline-first productivity application (shopping lists + notes)
+- Privacy-first by design: no accounts, no analytics, no ads
+- Local-first data storage with reliable Room migrations
+- Modern Android architecture using Jetpack Compose and Material 3
+- Optional AI-assisted meal planning that returns a recipe idea and a shopping-list friendly ingredient list
 
 🧱 Architecture Overview
 
-The application follows a robust layered architecture:
+The application follows a layered architecture:
 
-    UI Layer – Jetpack Compose with reactive Material 3 components
+- UI Layer – Jetpack Compose screens and Material 3 components
+- State Layer – ViewModels + Kotlin Flow/StateFlow for predictable state management
+- Domain Layer – Use-cases and repository interfaces (business rules separated from UI)
+- Data Layer – Room database + DAOs, mappers, and DataStore for settings
+- System Integration – Biometric authentication, backup/export/import, and multi-language support (14 languages)
 
-    State Layer – ViewModels + Kotlin Flows for predictable state management
+🔐 Privacy & Security
 
-    Data Layer – Room database with complex DAO relations and DataStore for settings
+- Core features work fully offline
+- No personal accounts and no tracking SDKs
+- All user data (lists, favorites, notes, birthdays, settings) is stored locally on the device
+- Optional biometric locking for sensitive sections (notes/settings)
+- Backup and restore are user-controlled via export/import (share sheet)
 
-    System Integration – Biometric authentication, automated backups, and multi-language support (12 languages)
+🤖 AI Feature (Meal Suggestions)
 
-Detailed documentation:
-
-    Architecture Overview
-
-    Data Layer Design
-
-    Privacy & Security
-
-    Pseudocode Samples (No Source Code)
-
-🔐 Privacy-First Design
-
-    100% offline operation for core features
-
-    No analytics or ads, respecting user's digital sovereignty
-
-    Biometric Locking for sensitive notes and settings
-
-    User-controlled data with local backup and restore mechanisms
+The AI feature is implemented as an optional assistant:
+- The user provides short constraints (quick choices + free text + optional servings)
+- The app calls a dedicated backend endpoint to produce one recipe idea and an ingredient list
+- Requests are protected with Firebase App Check to reduce abuse
+- Rate limits and optional “unlimited” whitelisting are enforced server-side
+- Prompt length is intentionally constrained on the client to control costs
 
 📦 Production Status
 
-    ✅ Production Approved: Officially granted access to Google Play production channel
-
-    ✅ Test Success: 14-day production verification completed with 24 active testers
-
-    ✅ Stability: 0.00% Crash/ANR rate reported via Android Vitals
-
-    ✅ Version: Currently deploying version 2.0.5
+- ✅ Live on Google Play (Production track)
+- ✅ Multi-language UI (14 languages)
+- ✅ Lightweight, fast UI with Compose + Material 3
+- ✅ Stable release workflow with signed App Bundles (AAB)
 
 ℹ️ Source Code Notice
 
-This repository intentionally does not contain application source code. The full implementation remains private to protect intellectual property and business logic. Architecture descriptions and pseudocode are provided for technical evaluation purposes.
+This repository intentionally does not contain application source code. The full implementation remains private to protect intellectual property and business logic. Architecture descriptions and selective pseudocode snippets may be provided for technical evaluation purposes.
 
 © 2026 Janstech
