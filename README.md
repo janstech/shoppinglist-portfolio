@@ -52,3 +52,68 @@ The AI feature is implemented as an optional assistant:
 This repository intentionally does not contain application source code. The full implementation remains private to protect intellectual property and business logic. Architecture descriptions and selective pseudocode snippets may be provided for technical evaluation purposes.
 
 © 2026 Janstech
+
+----
+
+## Kauppalista & Muistiinpanot  
+Android-tuotantosovelluksen arkkitehtuuriesittely
+
+Tämä repositorio dokumentoi **Kauppalista & Muistiinpanot** -Android-sovelluksen
+arkkitehtuurin ja keskeiset suunnitteluratkaisut. Sovellus on
+**tietosuoja edellä suunniteltu** ja julkaistu Google Play Kaupassa.
+
+Tämä on **portfolio- ja arkkitehtuuriesittely**, ei sovelluksen lähdekoodijulkaisu.
+
+### 🎯 Projektin tavoitteet
+
+- Offline-first-tuottavuussovellus (kauppalistat + muistiinpanot)
+- Tietosuoja suunnittelun lähtökohtana: ei käyttäjätilejä, ei analytiikkaa, ei mainoksia
+- Paikallinen tiedontallennus ja luotettavat Room-migraatiot
+- Moderni Android-arkkitehtuuri (Jetpack Compose + Material 3)
+- Vapaaehtoinen AI-avusteinen ateriatoiminto, joka tuottaa resepti-idean ja
+  ostoslistaystävällisen ainesosaluettelon
+
+### 🧱 Arkkitehtuurin yleiskuva
+
+Sovellus noudattaa kerroksellista arkkitehtuuria:
+
+- **UI-kerros** – Jetpack Compose -näkymät ja Material 3 -komponentit
+- **Tilanhallintakerros** – ViewModelit sekä Kotlin Flow / StateFlow
+- **Domain-kerros** – Käyttötapaukset ja repositorio-rajapinnat (liiketoimintalogiikka eriytetty UI:sta)
+- **Data-kerros** – Room-tietokanta, DAO:t, mapperit sekä DataStore asetuksille
+- **Järjestelmäintegraatiot** – Biometrinen lukitus, varmuuskopiointi (export/import) ja monikielisyys (14 kieltä)
+
+### 🔐 Tietosuoja ja turvallisuus
+
+- Sovelluksen perustoiminnot toimivat täysin offline-tilassa
+- Ei käyttäjätilejä eikä seuranta-SDK:ita
+- Kaikki käyttäjädatan osat (listat, suosikit, muistiinpanot, syntymäpäivät, asetukset)
+  tallennetaan paikallisesti laitteelle
+- Valinnainen biometrinen lukitus herkille osioille (muistiinpanot/asetukset)
+- Varmuuskopiointi ja palautus täysin käyttäjän hallinnassa (export/import)
+
+### 🤖 AI-toiminto (ateriasuositukset)
+
+AI-toiminto on toteutettu vapaaehtoisena avustajana:
+- Käyttäjä antaa lyhyet rajaukset (pikavalinnat + vapaa teksti + valinnaiset annokset)
+- Sovellus kutsuu erillistä backend-rajapintaa, joka palauttaa yhden resepti-idean
+  ja ainesosaluettelon
+- Pyynnöt suojataan Firebase App Check -mekanismilla väärinkäytösten estämiseksi
+- Käyttömäärärajoitukset ja mahdollinen “unlimited”-whitelist toteutetaan palvelinpuolella
+- Promptin pituutta rajoitetaan tietoisesti kustannusten hallitsemiseksi
+
+### 📦 Tuotantotilanne
+
+- ✅ Julkaistu Google Play Kaupassa (Production track)
+- ✅ Monikielinen käyttöliittymä (14 kieltä)
+- ✅ Kevyt ja nopea käyttöliittymä (Compose + Material 3)
+- ✅ Vakaa julkaisuputki allekirjoitetuilla App Bundleilla (AAB)
+
+### ℹ️ Lähdekoodia koskeva huomautus
+
+Tämä repositorio **ei sisällä sovelluksen lähdekoodia**.
+Koko toteutus pidetään yksityisenä immateriaalioikeuksien ja liiketoimintalogiikan suojaamiseksi.
+Arkkitehtuurikuvaukset ja valikoidut pseudokoodiesimerkit on tarkoitettu tekniseen arviointiin.
+
+© 2026 Janstech
+
