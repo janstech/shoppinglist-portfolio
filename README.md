@@ -121,6 +121,8 @@ Architecture descriptions and selective pseudocode snippets may be provided for 
 
 © 2026 Janstech
 
+--------
+
 Kauppalista & Muistiinpanot
 
 Android-tuotantosovelluksen arkkitehtuuriesittely
