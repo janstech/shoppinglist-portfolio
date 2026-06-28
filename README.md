@@ -42,6 +42,14 @@ The application follows a layered production architecture:
 - Firebase collaboration layer: Google Sign-In, Firestore, Cloud Functions, FCM,
   invite links, App Links, roles, and real-time shared-list synchronization.
 
+Detailed documentation:
+
+- [Architecture Overview](architecture-overview.md)
+- [Data Layer Design](architecture-data-layer.md)
+- [UI & State Management](architecture-ui-layer.md)
+- [Privacy & Security](architecture-privacy.md)
+- [Pseudocode Samples](architecture-pseudocode.md)
+
 ## Privacy & Security
 
 - Core features work without an account and store user content locally on the
@@ -193,6 +201,14 @@ Sovellus noudattaa kerroksellista tuotantoarkkitehtuuria:
   Google Play Integrity, OpenAI-kutsut ja MariaDB-pohjainen rate limiting.
 - Firebase-yhteistyökerros: Google Sign-In, Firestore, Cloud Functions, FCM,
   kutsulinkit, App Links, roolit ja reaaliaikainen jaettujen listojen synkronointi.
+
+Tarkemmat dokumentit:
+
+- [Architecture Overview](architecture-overview.md)
+- [Data Layer Design](architecture-data-layer.md)
+- [UI & State Management](architecture-ui-layer.md)
+- [Privacy & Security](architecture-privacy.md)
+- [Pseudocode Samples](architecture-pseudocode.md)
 
 ## Tietosuoja ja turvallisuus
 
